@@ -9,15 +9,23 @@
         margin-bottom: 10px;
         display: flex;
         justify-content: space-between;
+        @media only screen and (max-width: 800px) {
+            flex-direction: column;
+        }
+    }
+    &__wrapper {
+        padding-top: 3px;
+        @media only screen and (max-width: 800px) {
+            order: -1;
+            text-align: center;
+            padding: 0 0 10px 0;
+        }
     }
     &__filter {
-        padding-top: 3px;
-    }
-    &__top {
         text-decoration: none;
         padding: 0 6px 3px;
         color: #003;
-        &-active {
+        &_active {
             border-bottom: 1px solid #e16464;
             text-decoration: none;
             padding: 0 6px 3px;
@@ -25,13 +33,23 @@
         }
     }
     &__search {
+        @media only screen and (max-width: 800px) {
+            text-align: center;
+            padding: 15px 10px 10px 5px;
+        }
+    }
+    &__input {
         font-size: 14px;
         border: 1px solid #eaeaea;
         padding: 5px 25px 5px 10px;
         margin: 0;
+        @media only screen and (max-width: 800px) {
+            width: 80%;
+        }
     }
     &__button {
-        background: url(https://www.consumercomplaints.in/fw/magn.png) 50% 50% no-repeat;
+        background: url(https://www.consumercomplaints.in/fw/magn.png) 50% 50%
+            no-repeat;
         width: 12px;
         height: 12px;
         display: inline-block;
@@ -49,17 +67,30 @@
         display: flex;
         padding: 10px 0;
         border-bottom: 1px solid #eaeaea;
+        @media only screen and (max-width: 640px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
-    &__left{
+    &__left {
         display: flex;
         width: 50%;
         align-items: flex-end;
+        @media only screen and (max-width: 640px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
     }
-    &__right{
+    &__right {
         display: flex;
         width: 50%;
         justify-content: space-between;
         align-items: flex-end;
+        @media only screen and (max-width: 640px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
     &__image {
         width: 54px;
@@ -74,6 +105,9 @@
         font-size: 18px;
         font-weight: 700;
         margin-right: 15px;
+        @media only screen and (max-width: 640px) {
+            margin: 0;
+        }
     }
     &__info {
         font-size: 14px;
@@ -85,9 +119,15 @@
     }
     &__badges {
         display: flex;
+        @media only screen and (max-width: 640px) {
+            justify-content: center;
+        }
     }
     &__badge {
         padding-right: 10px;
+        &:last-child {
+            padding: 0;
+        }
         &-gold {
             display: inline-block;
             width: 10px;
@@ -116,18 +156,20 @@
             margin: -2.5px 5px 0 0;
         }
     }
-    &__since{
+    &__since {
         color: #bbb;
     }
-    &__num{
+    &__num {
         font-size: 24px;
         display: block;
         font-weight: 300;
         color: #333;
         text-align: center;
+        padding: 2px 0;
     }
-    &__text{
+    &__text {
         color: #bbb;
         font-size: 16px;
+        font-weight: 400;
     }
 }
