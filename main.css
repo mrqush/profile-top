@@ -163,6 +163,12 @@
   font-weight: 700;
   margin-right: 15px;
 }
+.profile-top__image_avatar {
+  width: 54px;
+  height: 54px;
+  background-size: cover;
+  border-radius: 50%;
+}
 @media only screen and (max-width: 640px) {
   .profile-top__image {
     margin: 0;
@@ -172,9 +178,20 @@
   font-size: 14px;
   color: #999;
 }
+@media only screen and (max-width: 640px) {
+  .profile-top__info {
+    padding-bottom: 10px;
+  }
+}
 .profile-top__name {
   text-decoration: none;
   color: green;
+}
+@media only screen and (max-width: 640px) {
+  .profile-top__name {
+    padding: 10px 0;
+    display: block;
+  }
 }
 .profile-top__badges {
   display: -webkit-box;
@@ -231,6 +248,11 @@
   color: #333;
   text-align: center;
   padding: 2px 0;
+}
+@media only screen and (max-width: 640px) {
+  .profile-top__num {
+    padding-bottom: 10px;
+  }
 }
 .profile-top__text {
   color: #bbb;

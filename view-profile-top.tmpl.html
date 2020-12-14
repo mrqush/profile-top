@@ -1,0 +1,86 @@
+<div class="shadow-box">
+    <div class="block-header">
+        <h1 class="block-header__name block-header__name_size18">
+            User Rating Top 50
+        </h1>
+    </div>
+    <div class="profile-top">
+        <div class="profile-top__tools">
+            <form action="" method="get" id="list-search" class="profile-top__search">
+                <input type="text" class="profile-top__input" placeholder="Find User" name="q" value="{$args['q']}">
+                <a href="#" class="profile-top__button" onclick="$('#list-search').submit();return false;"></a>
+                <if($base->isAdmin)>
+                    <select name="extend-limit" onchange="this.form.submit()">
+                        <option value="">Default</option>
+                        <option value="100" <if($in['extend-limit']=='100' )>selected</if> >100</option>
+                        <option value="200" <if($in['extend-limit']=='200' )>selected</if> >200</option>
+                        <option value="500" <if($in['extend-limit']=='500' )>selected</if> >500</option>
+                        <option value="1000" <if($in['extend-limit']=='1000' )>selected</if> >1000</option>
+                        <option value="2000" <if($in['extend-limit']=='2000' )>selected</if> >2000</option>
+                    </select>
+                    </if>
+            </form>
+            <div class="profile-top__wrapper">
+                <a href="/profile-top"
+                    class="<if($args['type']!='monthly')>profile-top__filter_active<else>profile-top__filter</if>">
+                    Top Reputation
+                </a>
+                <a href="/profile-monthly-top"
+                    class="<if($args['type']=='monthly')>profile-top__filter_active<else>profile-top__filter</if>">
+                    Monthly
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="profile-top__list">
+        <foreach( $args["items"] as $item )>
+            <div class="profile-top__item">
+                <div class="profile-top__left">
+                        <!-- {$item['no_logo_alpha']} -->
+                        <div class="profile-top__image profile-top__image_avatar" style="background-image:url(https://www.consumercomplaints.in/img/panel/users/2209656_photo.jpg?1456604192)"></div>
+                    <div class="profile-top__info">
+                        <a href="/profile-{$item['id']}" class="profile-top__name">{$item["displayname"]}</a>
+                        <div class="profile-top__badges">
+                            <div class="profile-top__badge">
+                                <i class="profile-top__badge-gold"></i>
+                                {$item["badget_gold_count"]}
+                            </div>
+                            <div class="profile-top__badge">
+                                <i class="profile-top__badge-silver"></i>
+                                {$item["badget_silver_count"]}
+                            </div>
+                            <div class="profile-top__badge">
+                                <i class="profile-top__badge-bronze"></i>
+                                {$item["badget_bronze_count"]}
+                            </div>
+                        </div>
+                        <div class="profile-top__since">
+                            Member since {$item["added"]}
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-top__right">
+                    <div class="profile-top__num">
+                        {$item["place"]}
+                        <div class="profile-top__text">
+                            <if($args['type']=='monthly')>Month </if>Rank
+                        </div>
+                    </div>
+                    <div class="profile-top__num">
+                        {$item["reputation_month"]}
+                        <div class="profile-top__text">
+                            Month Reputation
+                        </div>
+                    </div>
+                    <div class="profile-top__num">
+                        {$item["reputation"]}
+                        <div class="profile-top__text">
+                            Total Reputation
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </foreach>
+    </div>
+    {$args['pages']}
+</div>

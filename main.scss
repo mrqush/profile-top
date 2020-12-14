@@ -105,6 +105,12 @@
         font-size: 18px;
         font-weight: 700;
         margin-right: 15px;
+        &_avatar {
+            width: 54px;
+            height: 54px;
+            background-size: cover;
+            border-radius: 50%;
+        }
         @media only screen and (max-width: 640px) {
             margin: 0;
         }
@@ -112,10 +118,17 @@
     &__info {
         font-size: 14px;
         color: #999;
+        @media only screen and (max-width: 640px) {
+            padding-bottom: 10px;
+        }
     }
     &__name {
         text-decoration: none;
         color: green;
+        @media only screen and (max-width: 640px) {
+            padding: 10px 0;
+            display: block;
+        }
     }
     &__badges {
         display: flex;
@@ -166,6 +179,9 @@
         color: #333;
         text-align: center;
         padding: 2px 0;
+        @media only screen and (max-width: 640px) {
+            padding-bottom: 10px;
+        }
     }
     &__text {
         color: #bbb;
